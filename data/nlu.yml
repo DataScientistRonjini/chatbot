@@ -1,0 +1,141 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: monthly_late_comers
+  examples: |
+    - Who are the late comers of this month?
+    - Late comers of this month
+    - Names of the employees who came late this month
+    - Names of the employees who checked-in late this month
+    - employees who checked-in late this month
+    - employees who came late this month
+    - late comers
+
+- intent: late_count_today
+  examples: |
+    - How many employees are late today?
+    - How many are late today?
+    - late count today
+    - employees late count today
+    - candidates late count today
+
+- intent: late_count_names_today
+  examples: |
+    - Who are they?
+    - Who are the candidates late today?
+    - Who are the employees late today?
+    - employees person late today
+    - candidates person late today
+    - Names of the employees late today
+    - Names of the candidates late today
+    - Who have come late today?
+    - late comers today
+
+- intent: individual_monthly_late_counts
+  examples: |
+    - [Pamela](person) has come late how many times this month?
+    - How many times [Priya](person) has come late this month?
+    - How many times [Rita](person) has come late this month?
+    - How many times [Sushma](person) has come late this month?
+    - [Rita](person) is late how many times this month?
+    - How many late counts of [Sushma](person) this month?
+    - late counts of [Jaya](person) this month?
+    - I want to know [Rohit](person) has come late how many times this month?
+    - I want to know [Priya](person) is late how many times this month?
+    - I want to know how many late counts of [Deepa](person) this month?
+    - I want to know late counts of [Alvina](person) this month?
+
+- intent: individual_yearly_late_counts
+  examples: |
+    - [Pamela](person) has come late how many times this year?
+    - How many times [Priya](person) has come late this year?
+    - How many times [Rita](person) has come late this year?
+    - How many times [Sushma](person) has come late this year?
+    - [Rita](person) is late how many times this year?
+    - How many late counts of [Sushma](person) this year?
+    - late counts of [Jaya](person) this year?
+    - I want to know [Rohit](person) has come late how many times this year?
+    - I want to know [Priya](person) is late how many times this year?
+    - I want to know how many late counts of [Deepa](person) this year?
+    - I want to know late counts of [Alvina](person) this year?
+
+- intent: thankyou
+  examples: |
+    - thankyou
+    - thank you
+    - Thanks!
+    - Thanks for the information!
+    - Thanks for the info!
+    - Thank you so much for the information!
+    - Thank you so much!
+    - ty
+    - TY
+    - Great to get the information from you! Thank you!
+    - You are indeed a smart chatbot!
+    - Great to hear from you!
+
+# - lookup: person
+#   examples: |
+#     - Rita
+#     - Priya
+#     - Sushma
+#     - Pamela
+#     - Alvina
+#     - Jaya
+#     - Rohit
+#     - Deepa

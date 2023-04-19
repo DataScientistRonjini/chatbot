@@ -1,0 +1,68 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- monthly_late_comers
+- individual_monthly_late_counts
+- individual_yearly_late_counts
+- thankyou
+
+entities:
+- person
+
+slots:
+ person:
+  type: text
+  mappings:
+  - type: from_entity
+    entity: person
+
+responses:
+  utter_greet:
+  - text: "Hey HR! How may I help you?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_monthly_latecomers:
+  - text: "The late comers of this month are Rita, Priya and Sushma"
+
+  utter_welcome:
+  - text: "You are welcome! Happy to help you!"
+
+  utter_deny:
+  - text: "What more do you want to know?"
+
+  utter_more_info:
+  - text: "Yeah sure we can give you that information too."
+
+  utter_no_more_info:
+  - text: "We do not have any further information."
+
+  utter_individual_monthy_late_counts:
+  - text: "{person} came late 3 times this month"
+
+  utter_individual_yearly_late_counts:
+  - text: "{person} came late 10 times this year"
+
+actions:
+- set_entity
+- custom_utter_individual_monthy_late_counts
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

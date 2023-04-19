@@ -1,0 +1,142 @@
+version: "3.1"
+
+stories:
+
+- story: monthly latecomer path affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: monthly_late_comers
+  - action: utter_monthly_latecomers
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: thankyou
+  - action: utter_welcome
+
+- story: monthly latecomer path deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: monthly_late_comers
+  - action: utter_monthly_latecomers
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+  - intent: individual_monthly_late_counts
+  - slot_was_set:
+    - person: Rita
+  - action: set_entity
+  - action: custom_utter_individual_monthy_late_counts
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: thankyou
+  - action: utter_welcome
+
+- story: yearly late comer affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: monthly_late_comers
+  - action: utter_monthly_latecomers
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+  - intent: individual_monthly_late_counts
+  - slot_was_set:
+    - person: Sushma
+  - action: custom_utter_individual_monthy_late_counts
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+  - intent: individual_yearly_late_counts
+  - slot_was_set:
+    - person: Jaya
+  - action: utter_individual_yearly_late_counts
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: thankyou
+  - action: utter_welcome
+
+- story: yearly late comer deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: monthly_late_comers
+  - action: utter_monthly_latecomers
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+  - intent: individual_monthly_late_counts
+  - slot_was_set:
+    - person: Sushma
+  - action: set_entity
+  - action: custom_utter_individual_monthy_late_counts
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+  - intent: individual_yearly_late_counts
+  - slot_was_set:
+    - person: Jaya
+  - action: utter_individual_yearly_late_counts
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_no_more_info
+
+# - story: late today names yes
+#   steps:
+#   - intent: late_count_today
+#   - action: utter_late_count_today
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_deny
+#   - intent: late_count_names_today
+#   - action: utter_more_info
+#   - action: utter_late_count_names_today
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_deny
+#   - intent: individual_monthly_late_counts
+#   - slot_was_set:
+#     - person: Rohit
+#   - action: custom_utter_more_info
+#   - action: custom_utter_individual_monthy_late_counts
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+#   - intent: thankyou
+#   - action: utter_welcome
+
+# - story: late today names no
+#   steps:
+#   - intent: late_count_today
+#   - action: utter_late_count_today
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_deny
+#   - intent: late_count_names_today
+#   - action: utter_more_info
+#   - action: utter_late_count_names_today
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_deny
+#   - intent: individual_monthly_late_counts
+#   - slot_was_set:
+#     - person: Rekha
+#   - action: custom_utter_more_info
+#   - action: custom_utter_individual_monthy_late_counts
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_deny
+#   - intent: individual_yearly_late_counts
+#   - slot_was_set:
+#     - person: Rohit
+#   - action: custom_utter_more_info
+#   - action: custom_utter_individual_yearly_late_counts
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+#   - intent: thankyou
+#   - action: utter_welcome
